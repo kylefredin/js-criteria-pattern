@@ -1,0 +1,17 @@
+{
+  "name": "js-criteria-pattern",
+  "version": "0.0.0",
+  "description": "Demonstration of the Criteria pattern in plain JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "test:coverage": "nyc ava",
+    "start": "node ./src/index.js"
+  },
+  "author": "Kyle Fredin <kylefredin@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "nyc": "^15.1.0"
+  }
+}
