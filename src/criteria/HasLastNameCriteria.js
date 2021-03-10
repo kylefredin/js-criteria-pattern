@@ -4,7 +4,7 @@ class HasLastNameCriteria {
    * @return {Object[]}
    */
   meetCriteria(users = []) {
-    return users.filter((user) => user.lastName.length > 0);
+    return users.filter(({ lastName = "" }) => lastName.length > 0);
   }
 }
 
