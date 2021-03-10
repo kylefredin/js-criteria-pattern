@@ -58,3 +58,21 @@ const evenCriteria = new IsEvenCriteria();
 const evenNumbers = evenCriteria.meetCriteria(numbers);
 
 console.log({ evenNumbers });
+
+// The criteria pattern is interesting for strongly typed languages,
+// but I am not sure if it is a suitable replacement to the standard
+// array.filter method...
+const hasFirstName = ({ firstName = "" }) => firstName.length > 0;
+const hasLastName = ({ lastName = "" }) => lastName.length > 0;
+
+const userzWithFirstName = allUsers.filter(hasFirstName);
+const userzWithLastName = allUsers.filter(hasLastName);
+const userzWithBoth = allUsers.filter(hasFirstName).filter(hasLastName);
+const userzWithEither = allUsers.filter(
+  (user) => hasFirstName(user) || hasLastName(user)
+);
+
+console.log({ userzWithFirstName });
+console.log({ userzWithLastName });
+console.log({ userzWithBoth });
+console.log({ userzWithEither });
